@@ -15,7 +15,7 @@ title: Home
 
 <section>
   <div class="section-head">
-    <h2>Recent scribbles</h2>
+    <h2>Recent posts</h2>
     <a href="{{ '/blog/' | relative_url }}">All posts &rarr;</a>
   </div>
   {% include post-list.html posts=site.posts limit=5 %}
