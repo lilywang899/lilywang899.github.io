@@ -3,8 +3,12 @@ layout: default
 title: Home
 ---
 <section class="hero">
-  <h1>Hi, I'm {{ site.author }}.</h1>
-  <p class="lead">{{ site.tagline }}</p>
+  <img class="avatar" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Photo of {{ site.author }}" width="120" height="120">
+  <div>
+    <h1>Hi, I'm {{ site.author }}.</h1>
+    <p class="lead">{{ site.tagline }}</p>
+    <p class="hero-links"><a href="{{ '/about/' | relative_url }}">About me</a> &middot; <a href="{{ '/assets/lily_resume.pdf' | relative_url }}">Resume (PDF)</a></p>
+  </div>
 </section>
 
 <section>
