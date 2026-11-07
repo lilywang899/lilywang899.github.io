@@ -80,6 +80,7 @@ p { margin: 0 0 1.1rem; }
 }
 .social-links a:hover { text-decoration: none; background: var(--soft); border-color: var(--soft-2); color: var(--text); transform: translateY(-2px); }
 .social-links a:nth-child(2):hover { background: var(--butter); }
+.social-links a.copied { background: var(--soft-2); border-color: var(--accent); }
 .social-links a:nth-child(3):hover { background: var(--blush); }
 .social-links svg, .social-links .icon { width: 16px !important; height: 16px !important; flex-shrink: 0; fill: var(--accent); }
 
