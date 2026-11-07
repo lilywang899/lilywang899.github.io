@@ -40,7 +40,6 @@ Commit and push. The site rebuilds in about a minute.
 
 - `index.md` - home page (shows the 5 most recent posts)
 - `blog/index.html` - all posts grouped by year
-- `about.md` - about page
 - `_layouts/` - HTML templates, `assets/css/style.css` - styles
 
 ## Local preview (optional)
