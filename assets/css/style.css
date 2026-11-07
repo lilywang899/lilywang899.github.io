@@ -1,34 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&family=Caveat:wght@700&display=swap");
 
 :root {
-  --bg: #f4f7f2;
+  --bg: #f9fbf7;
   --surface: #ffffff;
   --text: #26312a;
   --muted: #6b7a6f;
   --accent: #5f8a6a;
   --accent-hover: #4a7254;
-  --soft: #e3ece2;
-  --soft-2: #cfdfd0;
-  --border: #dbe4da;
-  --code-bg: #eaf0e8;
+  --soft: #e8f1e6;
+  --soft-2: #cfe6d1;
+  --butter: #fbf3d5;
+  --blush: #fbe4e4;
+  --border: #e1e9df;
+  --code-bg: #eef4ec;
   --max: 42rem;
   --head: "Fraunces", Georgia, serif;
   --body: "Nunito", -apple-system, "Segoe UI", sans-serif;
   --hand: "Caveat", cursive;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1b201c;
-    --surface: #232a25;
-    --text: #e6ece6;
-    --muted: #9aa89d;
-    --accent: #9ec5a6;
-    --accent-hover: #b6d6bc;
-    --soft: #2d3830;
-    --soft-2: #394739;
-    --border: #334036;
-    --code-bg: #27302a;
-  }
 }
 
 * { box-sizing: border-box; }
@@ -42,7 +30,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-::selection { background: var(--soft-2); }
+::selection { background: var(--butter); }
 .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
 main { flex: 1; padding: 2.5rem 1rem 4rem; }
 
@@ -61,8 +49,8 @@ p { margin: 0 0 1.1rem; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 3.75rem; }
 .site-title { font-family: var(--hand); font-size: 1.6rem; font-weight: 700; color: var(--text); }
 .site-title:hover { text-decoration: none; color: var(--accent); }
-.site-nav a { color: var(--muted); margin-left: 0.4rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 999px; transition: background .15s, color .15s; display: inline-block; }
-.site-nav a:hover { text-decoration: none; color: var(--text); background: var(--soft); }
+.site-nav a { color: var(--muted); margin-left: 0.4rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 999px; transition: background .15s, color .15s, transform .15s; display: inline-block; }
+.site-nav a:hover { text-decoration: none; color: var(--text); background: var(--butter); transform: rotate(-2deg); }
 .site-nav a.active { color: var(--text); background: var(--soft); }
 
 /* Footer */
@@ -73,7 +61,7 @@ p { margin: 0 0 1.1rem; }
 /* Hero */
 .hero { padding: 1rem 0 1.5rem; display: flex; align-items: flex-start; gap: 2rem; }
 .hero h1 { margin-bottom: 0.6rem; }
-.hero .name { background: linear-gradient(transparent 60%, var(--soft-2) 60%, var(--soft-2) 92%, transparent 92%); padding: 0 0.1em; }
+.hero .name { background: linear-gradient(transparent 60%, var(--butter) 60%, var(--butter) 92%, transparent 92%); padding: 0 0.1em; }
 .bio { margin-bottom: 1rem; }
 .avatar-wrap { flex-shrink: 0; }
 .avatar {
@@ -88,9 +76,11 @@ p { margin: 0 0 1.1rem; }
   color: var(--text); font-weight: 600; font-size: 0.92rem;
   background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
   padding: 0.3rem 0.8rem;
-  transition: background .15s, border-color .15s;
+  transition: background .15s, border-color .15s, transform .15s;
 }
-.social-links a:hover { text-decoration: none; background: var(--soft); border-color: var(--soft-2); color: var(--text); }
+.social-links a:hover { text-decoration: none; background: var(--soft); border-color: var(--soft-2); color: var(--text); transform: translateY(-2px); }
+.social-links a:nth-child(2):hover { background: var(--butter); }
+.social-links a:nth-child(3):hover { background: var(--blush); }
 .social-links svg, .social-links .icon { width: 16px !important; height: 16px !important; flex-shrink: 0; fill: var(--accent); }
 
 /* Sections */
@@ -104,10 +94,12 @@ p { margin: 0 0 1.1rem; }
   display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; align-items: start;
   padding: 1rem 1.1rem;
   background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  transition: border-color .15s, background .15s;
+  transition: border-color .15s, transform .2s, box-shadow .2s;
 }
-.post-list li:hover { border-color: var(--soft-2); background: color-mix(in srgb, var(--surface) 70%, var(--soft)); }
-.post-list time { color: var(--muted); font-size: 0.9rem; padding-top: 0.25rem; white-space: nowrap; }
+.post-list li:hover { border-color: var(--soft-2); transform: translateY(-3px) rotate(-0.4deg); box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 14%, transparent); }
+.post-list time { color: var(--accent-hover); font-size: 0.85rem; font-weight: 700; background: var(--soft); padding: 0.15rem 0.5rem; border-radius: 6px; justify-self: start; transform: rotate(-3deg); }
+.post-list li:nth-child(2n) time { background: var(--butter); transform: rotate(2deg); }
+.post-list li:nth-child(3n) time { background: var(--blush); }
 .post-link { font-family: var(--head); font-weight: 700; font-size: 1.15rem; color: var(--text); }
 .post-link:hover { color: var(--accent); text-decoration: none; }
 .post-excerpt { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.95rem; }
@@ -129,9 +121,11 @@ p { margin: 0 0 1.1rem; }
   display: inline-block; font-size: 0.8rem; font-weight: 600; color: var(--accent-hover);
   padding: 0.1rem 0.6rem; margin-left: 0.3rem; border-radius: 999px; background: var(--soft);
 }
+.tag:nth-of-type(2) { background: var(--butter); }
+.tag:nth-of-type(3) { background: var(--blush); }
 .post-content img { max-width: 100%; height: auto; border-radius: 10px; }
 .post-content .figure { margin: 1.5rem 0 0.5rem; text-align: center; }
-.post-content .figure img { display: inline-block; border: 1px solid var(--border); background: #fff; }
+.post-content .figure img { display: inline-block; border: 1px solid var(--border); background: #fff; box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 10%, transparent); }
 .post-content .caption { color: var(--muted); font-size: 0.9rem; line-height: 1.5; text-align: center; margin: 0.6rem auto 1.75rem; max-width: 36rem; }
 .post-content blockquote {
   margin: 1.25rem 0; padding: 0.5rem 1.1rem; border-left: 3px solid var(--soft-2);
@@ -163,3 +157,7 @@ pre code { background: none; padding: 0; }
 /* 404 */
 .oops { text-align: center; padding: 3rem 0; }
 .oops .big { font-size: 4rem; line-height: 1; margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
