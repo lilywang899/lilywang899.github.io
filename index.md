@@ -7,8 +7,8 @@ title: Home
     <img class="avatar" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Photo of {{ site.author }}" width="150" height="150">
   </div>
   <div>
-    <h1><span class="wave">👋</span> Hi, I'm <span class="name">{{ site.author }}</span>.</h1>
-    <p class="bio">Hey! I'm a computer engineering student at University of Waterloo, interested in robot learning. Previously, I worked on humanoid grasp manipulation at Apptronik. My current fixation is the application of world models in manipulation. In my free time, I like eating, reading, rock climbing, and snowboarding.</p>
+    <h1>Hi! I'm <span class="name">Lily</span></h1>
+    <p class="bio">I'm a computer engineering student at University of Waterloo, interested in robot learning. Previously, I worked on humanoid grasp manipulation at Apptronik. My current fixation is the application of world models in manipulation. In my free time, I like eating, reading, rock climbing, and snowboarding.</p>
     {% include social-links.html %}
   </div>
 </section>
