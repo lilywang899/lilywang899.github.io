@@ -121,7 +121,7 @@ p { margin: 0 0 1.1rem; }
 .social-links a:nth-child(2):hover { background: var(--mint); }
 .social-links a:nth-child(3):hover { background: var(--sky); }
 .social-links a:nth-child(4):hover { background: var(--lilac); }
-.social-links svg { width: 1.1em; height: 1.1em; fill: currentColor; }
+.social-links svg, .social-links .icon { width: 18px !important; height: 18px !important; flex-shrink: 0; fill: currentColor; }
 
 /* Sections */
 .section-head { display: flex; align-items: baseline; justify-content: space-between; }
