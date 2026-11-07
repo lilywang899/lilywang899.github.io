@@ -6,7 +6,7 @@ title: Home
   <img class="avatar" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Photo of {{ site.author }}" width="120" height="120">
   <div>
     <h1>Hi, I'm {{ site.author }}.</h1>
-    <p class="lead">{{ site.tagline }}</p>
+    <p class="bio">Hey! I'm a computer engineering student at University of Waterloo, interested in robot learning. Previously, I worked on humanoid grasp manipulation at Apptronik. My current fixation is the application of world models in manipulation. In my free time, I like eating, reading, rock climbing, and snowboarding.</p>
     {% include social-links.html %}
   </div>
 </section>
