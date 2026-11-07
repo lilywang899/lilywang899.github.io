@@ -1,0 +1,44 @@
+# --- Edit these ---
+title: Your Name
+tagline: Notes, projects, and things I'm learning.
+description: Personal site and blog.
+author: Your Name
+email: you@example.com
+# For a user site (username.github.io) leave url/baseurl as-is after filling url.
+url: "https://USERNAME.github.io"
+baseurl: ""
+github_username: USERNAME
+# twitter_username: yourhandle
+# ------------------
+
+permalink: /blog/:year/:month/:day/:title/
+timezone: America/Los_Angeles
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: "<!--more-->"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .jekyll-cache

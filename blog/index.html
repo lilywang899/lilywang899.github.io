@@ -1,0 +1,12 @@
+---
+layout: default
+title: Blog
+---
+<h1 class="page-title">Blog</h1>
+<p class="muted">{{ site.posts | size }} posts &middot; <a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a></p>
+
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in posts_by_year %}
+<h2 class="year">{{ year.name }}</h2>
+{% include post-list.html posts=year.items %}
+{% endfor %}
