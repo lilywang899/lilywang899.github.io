@@ -3,7 +3,7 @@ layout: default
 title: Blog
 ---
 <h1 class="page-title">Blog</h1>
-<p class="muted">{{ site.posts | size }} posts &middot; <a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a></p>
+<p class="muted">{{ site.posts | size }} posts</p>
 
 {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 {% for year in posts_by_year %}
