@@ -6,7 +6,7 @@ author: Lily Wang
 email: you@example.com
 # For a user site (username.github.io) leave url/baseurl as-is after filling url.
 url: "https://lilywang899.github.io"
-baseurl: "/lilyjywang.github.io"
+baseurl: ""
 github_username: lilywang899
 # twitter_username: yourhandle
 # ------------------
