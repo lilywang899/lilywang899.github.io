@@ -11,12 +11,6 @@ Hi! I'm {{ site.author }}. This is my corner of the internet where I write about
 
 Replace this with a few sentences about yourself: your work, your interests, what people can expect to find here.
 
-## Resume
+## Links
 
-[Download my resume (PDF)]({{ '/assets/lily_resume.pdf' | relative_url }})
-
-## Get in touch
-
-- Email: [{{ site.email }}](mailto:{{ site.email }})
-- LinkedIn: [lily-jy-wang]({{ site.linkedin_url }})
-- GitHub: [@{{ site.github_username }}](https://github.com/{{ site.github_username }})
+{% include social-links.html %}
