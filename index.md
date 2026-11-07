@@ -5,7 +5,6 @@ title: Home
 <section class="hero">
   <div class="avatar-wrap">
     <img class="avatar" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Photo of {{ site.author }}" width="150" height="150">
-    <span class="sticker">🤖 robots!</span>
   </div>
   <div>
     <h1><span class="wave">👋</span> Hi, I'm <span class="name">{{ site.author }}</span>.</h1>

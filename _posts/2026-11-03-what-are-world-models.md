@@ -120,4 +120,4 @@ Either way, what makes world models worth the trouble is the same thing that let
 
 [^1]: Danijar Hafner. “Introducing Dreamer: Scalable Reinforcement Learning Using World Models.” *Google Research Blog*, March 18, 2020. [research.google/blog/introducing-dreamer-scalable-reinforcement-learning-using-world-models](https://research.google/blog/introducing-dreamer-scalable-reinforcement-learning-using-world-models/)
 
-[^2]: Vizuara. “Build a World Model from Scratch — New Series Launch | Episode 0.” YouTube video, August 4, 2026. [youtube.com/watch?v=7l7rBM784pg](https://www.youtube.com/watch?v=7l7rBM784pg)
+[^2]: Vizuara. “Build a World Model from Scratch — New Series Launch \| Episode 0.” YouTube video, August 4, 2026. [youtube.com/watch?v=7l7rBM784pg](https://www.youtube.com/watch?v=7l7rBM784pg)
