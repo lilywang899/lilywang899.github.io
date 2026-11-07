@@ -46,10 +46,10 @@ p { margin: 0 0 1.1rem; }
 
 /* Header */
 .site-header { border-bottom: 1px solid var(--border); background: var(--bg); }
-.site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 3.75rem; }
+.site-header .wrap { display: flex; align-items: center; justify-content: flex-start; height: 3.75rem; }
 .site-title { font-family: var(--hand); font-size: 1.6rem; font-weight: 700; color: var(--text); }
 .site-title:hover { text-decoration: none; color: var(--accent); }
-.site-nav a { color: var(--muted); margin-left: 0.4rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 999px; transition: background .15s, color .15s, transform .15s; display: inline-block; }
+.site-nav a { color: var(--muted); margin-right: 0.4rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 999px; transition: background .15s, color .15s, transform .15s; display: inline-block; }
 .site-nav a:hover { text-decoration: none; color: var(--text); background: var(--butter); transform: rotate(-2deg); }
 .site-nav a.active { color: var(--text); background: var(--soft); }
 
