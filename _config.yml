@@ -3,12 +3,12 @@ title: Lily Wang
 tagline: Notes, projects, and things I'm learning.
 description: Personal site and blog.
 author: Lily Wang
-email: you@example.com
+email: lily.jingyi.wang@gmail.com
 # For a user site (username.github.io) leave url/baseurl as-is after filling url.
 url: "https://lilywang899.github.io"
 baseurl: ""
 github_username: lilywang899
-# twitter_username: yourhandle
+linkedin_url: https://www.linkedin.com/in/lily-jy-wang/
 # ------------------
 
 permalink: /blog/:year/:month/:day/:title/

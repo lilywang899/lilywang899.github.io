@@ -18,4 +18,5 @@ Replace this with a few sentences about yourself: your work, your interests, wha
 ## Get in touch
 
 - Email: [{{ site.email }}](mailto:{{ site.email }})
+- LinkedIn: [lily-jy-wang]({{ site.linkedin_url }})
 - GitHub: [@{{ site.github_username }}](https://github.com/{{ site.github_username }})

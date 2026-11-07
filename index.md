@@ -7,7 +7,7 @@ title: Home
   <div>
     <h1>Hi, I'm {{ site.author }}.</h1>
     <p class="lead">{{ site.tagline }}</p>
-    <p class="hero-links"><a href="{{ '/about/' | relative_url }}">About me</a> &middot; <a href="{{ '/assets/lily_resume.pdf' | relative_url }}">Resume (PDF)</a></p>
+    <p class="hero-links"><a href="{{ '/about/' | relative_url }}">About me</a> &middot; <a href="{{ '/projects/' | relative_url }}">Projects</a> &middot; <a href="{{ '/assets/lily_resume.pdf' | relative_url }}">Resume (PDF)</a></p>
   </div>
 </section>
 
