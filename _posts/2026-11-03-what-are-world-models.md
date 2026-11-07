@@ -1,5 +1,5 @@
 ---
-title: "What are world models"
+title: "World models?!"
 date: 2026-11-03 17:00:00 -0800
 tags: [ai, world models, robotics]
 ---
@@ -23,7 +23,7 @@ Using this relationship, the world model can predict not just one step into the 
 ![alt text]({{ "/assets/images/world-models/image.png" | relative_url }})
 {: .figure}
 
-This figure from the Dreamer paper shows how the world model predicts future outcomes given five history frames [1]
+This figure from the Dreamer paper shows how the world model predicts future outcomes given five history frames.[^1]
 {: .caption}
 
 There are many types of world models, such as renderers, simulators, and planners. I'm going to focus on the applications of world models to robotics. Of course, there are many blogs, papers, and videos about world models already, but I'd consider this post a beginner's guide. I'll make a more technical part two on how I used world models for teleoperation and the problems I encountered.
@@ -32,13 +32,10 @@ There are many types of world models, such as renderers, simulators, and planner
 
 ### How to use image inputs
 
-As a physical simulator, a world model for robotics should capture the key context of the task without needing to predict every pixel perfectly like a renderer would. Pixels also hold more detail than necessary, which can hinder the model's ability to focus on the key parts. For example, if we're teaching the model what happens when you pick up a water bottle from a table, the model only needs to focus on the robot's interaction with the water bottle. To achieve this, world models often train in token space instead of pixel space. This way, instead of feeding in 150,528 raw pixel values (224 × 224 × 3 colour channels) for each image, the model takes in the image as a few hundred tokens.
+As a physical simulator, a world model for robotics should capture the key context of the task without needing to predict every pixel perfectly like a renderer would. Pixels also hold more detail than necessary, which can hinder the model's ability to focus on the key parts. For example, if we're teaching the model what happens when you pick up a water bottle from a table, the model only needs to focus on the robot's interaction with the water bottle. To achieve this, world models often train in token space instead of pixel space. This way, instead of feeding in 150,528 raw pixel values (224 × 224 × 3 colour channels) for each image, the model takes in the image as a few hundred tokens.[^2]
 
 ![alt text]({{ "/assets/images/world-models/image-1.png" | relative_url }})
 {: .figure}
-
-[2]
-{: .caption}
 
 In this example, the 224×224 image is divided into a 16×16 grid of 14×14-pixel patches, for 256 patches in total. A pretrained image encoder (here DINOv2) turns each patch into a token: a vector of 384 numbers that summarises the information in that patch. The encoder is frozen, so the world model only has to learn the dynamics, not how to see.
 
@@ -90,7 +87,7 @@ There are many other variants of world models of course, each suited to differen
 ![alt text]({{ "/assets/images/world-models/image6.gif" | relative_url }})
 {: .figure}
 
-Dreamer learns a world model from experience. Using past images (o1–o3) and actions (a1–a2), it computes a sequence of compact model states (green circles) from which it reconstructs the images (ô1–ô3) and predicts the rewards (r̂1–r̂3).  [1]
+Dreamer learns a world model from experience. Using past images (o1–o3) and actions (a1–a2), it computes a sequence of compact model states (green circles) from which it reconstructs the images (ô1–ô3) and predicts the rewards (r̂1–r̂3).[^1]
 {: .caption}
 
 Holding the world model and reward predictor fixed, Dreamer then trains an actor to propose actions entirely on imagined rollouts: starting from states the robot has actually visited, the actor proposes actions, the world model predicts the resulting states and rewards, and the critic estimates the return beyond the imagined horizon. Using the feedback from the world model, the actor learns to choose actions that maximize the predicted total return and the critic is updated to predict the return more accurately.
@@ -119,6 +116,8 @@ Neither is strictly better. If you can write down a reward and afford the enviro
 
 Either way, what makes world models worth the trouble is the same thing that lets you carry a glass of water without thinking about it: a sense of what will happen before you do it. In part two, I'll get into how I used a simulator-style world model for teleoperation, and the places where this tidy picture breaks down.
 
-[1] Danijar Hafner. “Introducing Dreamer: Scalable Reinforcement Learning Using World Models.” Google Research Blog, March 18, 2020. https://research.google/blog/introducing-dreamer-scalable-reinforcement-learning-using-world-models/
+## References
 
-[2] Vizuara. “Build a World Model from Scratch — New Series Launch | Episode 0.” YouTube video, August 4, 2026. https://www.youtube.com/watch?v=7l7rBM784pg
+[^1]: Danijar Hafner. “Introducing Dreamer: Scalable Reinforcement Learning Using World Models.” *Google Research Blog*, March 18, 2020. [research.google/blog/introducing-dreamer-scalable-reinforcement-learning-using-world-models](https://research.google/blog/introducing-dreamer-scalable-reinforcement-learning-using-world-models/)
+
+[^2]: Vizuara. “Build a World Model from Scratch — New Series Launch | Episode 0.” YouTube video, August 4, 2026. [youtube.com/watch?v=7l7rBM784pg](https://www.youtube.com/watch?v=7l7rBM784pg)
