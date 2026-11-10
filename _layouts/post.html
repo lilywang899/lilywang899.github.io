@@ -17,6 +17,19 @@ layout: default
     {{ content }}
   </div>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true"><img alt=""><div class="hint">Click anywhere or press Esc to close</div></div>
+  <script>
+    (function () {
+      var box = document.getElementById('lightbox'), big = box.querySelector('img');
+      document.querySelectorAll('.post-content .figure img, .post-content .side-by-side img').forEach(function (img) {
+        img.addEventListener('click', function () { big.src = img.src; big.alt = img.alt; box.classList.add('open'); document.body.style.overflow = 'hidden'; });
+      });
+      function close() { box.classList.remove('open'); document.body.style.overflow = ''; }
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    })();
+  </script>
+
   <nav class="post-nav">
     {% if page.previous %}
       <a class="prev" href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>
