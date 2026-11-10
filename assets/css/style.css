@@ -162,3 +162,10 @@ pre code { background: none; padding: 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
 }
+
+/* Side-by-side figures */
+.side-by-side { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; margin: 1.5rem 0; }
+.side-by-side figure { margin: 0; text-align: center; }
+.side-by-side img { border: 1px solid var(--border); border-radius: 10px; }
+.side-by-side figcaption { color: var(--muted); font-size: 0.85rem; line-height: 1.45; margin-top: 0.5rem; }
+@media (max-width: 560px) { .side-by-side { grid-template-columns: 1fr; } }
